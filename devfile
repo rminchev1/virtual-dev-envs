@@ -6,7 +6,7 @@ projects:
     source:
       location: 'https://github.com/rminchev1/virtual-dev-envs'
       type: git
-      branch: master
+      branch: main
 components:
   - type: chePlugin
     id: eamodio/vscode-gitlens/latest
