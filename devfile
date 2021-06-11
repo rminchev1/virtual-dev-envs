@@ -1,6 +1,22 @@
 apiVersion: 1.0.0
 metadata:
   name: minimal-workspace
+projects:
+  - name: k3s-dev-env
+    source:
+      location: 'https://github.com/rminchev1/virtual-dev-envs'
+      type: git
+      branch: master
 components:
   - type: chePlugin
-    id: eamodio/gitlens/latest
+    id: eamodio/vscode-gitlens/latest
+  - mountSources: true
+    command:
+      - tail
+    args:
+      - '-f'
+      - /dev/null
+    memoryLimit: 64Mi
+    type: dockerimage
+    alias: dev
+    image: 'registry.access.redhat.com/ubi8-minimal:8.3'
